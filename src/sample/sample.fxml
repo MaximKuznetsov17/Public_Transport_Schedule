@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="CENTER" gridLinesVisible="true" hgap="10.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <AnchorPane prefHeight="704.0" prefWidth="1341.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <Label layoutX="1066.0" layoutY="275.0" prefHeight="39.0" prefWidth="146.0" text="Остановка">
+          <font>
+            <Font name="System Bold" size="28.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Label font="$x1" layoutX="1018.0" layoutY="499.0" prefHeight="39.0" prefWidth="242.0" text="Номер маршрута" textAlignment="CENTER" />
+        <TextField fx:id="transport" layoutX="1018.0" layoutY="563.0" prefHeight="39.0" prefWidth="242.0" promptText="№***" />
+        <TextField fx:id="stop" layoutX="1018.0" layoutY="333.0" prefHeight="39.0" prefWidth="242.0" promptText="Название остановки" />
+        <TableView id="table" fx:id="tableViewTransport" layoutX="14.0" layoutY="14.0" prefHeight="292.0" prefWidth="701.0" />
+        <TableView id="table" fx:id="tableViewStop" layoutX="14.0" layoutY="14.0" prefHeight="292.0" prefWidth="701.0" />
+        <Button fx:id="search" layoutX="1018.0" layoutY="629.0" mnemonicParsing="false" onAction="#onAction" prefHeight="36.0" prefWidth="242.0" text="Найти">
+          <font>
+            <Font name="System Bold" size="20.0" />
+          </font>
+        </Button>
+        <Label font="$x1" layoutX="1030.0" layoutY="382.0" prefHeight="39.0" prefWidth="218.0" text="Тип транспорта" textAlignment="CENTER" />
+        <ChoiceBox fx:id="choiceBox" layoutX="1018.0" layoutY="440.0" prefHeight="36.0" prefWidth="242.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <ScatterChart fx:id="chart" layoutX="0.0" layoutY="323.0" prefHeight="359.0" prefWidth="951.0">
+          <xAxis>
+            <CategoryAxis id="aXis" fx:id="xAxis" animated="true" autoRanging="true" endMargin="100.0" side="BOTTOM" startMargin="1.0" tickLabelGap="1.0" tickLabelRotation="45.0" tickLength="5.0" />
+          </xAxis>
+          <yAxis>
+            <NumberAxis id="aXis" fx:id="yAxis" side="LEFT" />
+          </yAxis>
+        </ScatterChart>
+        <CheckBox id="radio" fx:id="checker" layoutX="951.0" layoutY="73.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="376.0" text="Учитывать текущее время?">
+          <font>
+            <Font name="System Bold" size="24.0" />
+          </font>
+        </CheckBox>
+        <Label font="$x1" layoutX="972.0" layoutY="160.0" prefHeight="39.0" prefWidth="334.0" text="Направление движения" textAlignment="CENTER" />
+        <TextField id="stop" fx:id="textField" layoutX="1018.0" layoutY="217.0" prefHeight="39.0" prefWidth="242.0" promptText="Название остановки" />
+      </children>
+    </AnchorPane>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>
